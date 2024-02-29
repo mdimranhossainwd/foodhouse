@@ -1,4 +1,4 @@
-import { NavLink } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 
 const Header = () => {
   const Menu = (
@@ -15,8 +15,8 @@ const Header = () => {
   );
 
   return (
-    <div className="container mx-auto">
-      <div className="navbar bg-base-100 py-4 flex items-center">
+    <div className="container absolute top-0 left-0 right-0 shadow-md mx-auto">
+      <div className="navbar py-4 flex items-center">
         <div className="navbar-start">
           <div className="dropdown">
             <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -42,14 +42,16 @@ const Header = () => {
               {Menu}
             </ul>
           </div>
-          <img
-            className="w-40 h-14 bg-cover"
-            src="https://i.ibb.co/cTdQQc1/asian-logo-1024x291.png"
-            alt=""
-          />
+          <Link hrefLang="index.html">
+            <img
+              className="w-40 h-14 bg-cover"
+              src="https://i.ibb.co/cTdQQc1/asian-logo-1024x291.png"
+              alt=""
+            />
+          </Link>
         </div>
         <div className="navbar-end hidden lg:flex">
-          <ul className="menu menu-horizontal px-1 text-lg gap-5 font-medium">
+          <ul className="menu menu-horizontal px-1 text-white text-lg gap-5 font-medium">
             {Menu}
           </ul>
         </div>
