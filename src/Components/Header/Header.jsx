@@ -15,11 +15,15 @@ const Header = () => {
   );
 
   return (
-    <div className="container absolute top-0 left-0 right-0 shadow-md mx-auto">
+    <div className="container absolute top-0 left-0 right-0 mx-auto">
       <div className="navbar py-4 flex items-center">
         <div className="navbar-start">
           <div className="dropdown">
-            <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
+            <div
+              tabIndex={0}
+              role="button"
+              className=" text-white mr-28 md:mr-0 lg:hidden"
+            >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 className="h-5 w-5"

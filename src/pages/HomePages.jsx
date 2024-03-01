@@ -1,10 +1,11 @@
-import Banner from "../Components/Header/Shared/Banner/Banner";
-import Footer from "../Components/Header/Shared/Footer";
-
+import OnlineCard from "../Components/Card/OnlineCard";
+import Banner from "../Shared/Banner/Banner";
+import Footer from "../Shared/Footer";
 const HomePages = () => {
   return (
     <div>
       <Banner />
+      <OnlineCard />
       <Footer />
     </div>
   );
