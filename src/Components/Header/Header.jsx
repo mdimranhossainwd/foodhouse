@@ -4,12 +4,10 @@ const Header = () => {
   const Menu = (
     <>
       <NavLink>Home</NavLink>
-
-      <NavLink>About</NavLink>
+      <NavLink>Services</NavLink>
       <NavLink>Menu</NavLink>
       <NavLink>Cart</NavLink>
-      <NavLink>Services</NavLink>
-      <NavLink>Contact</NavLink>
+      <NavLink to="/contact">Contact</NavLink>
       <NavLink>Login</NavLink>
     </>
   );
