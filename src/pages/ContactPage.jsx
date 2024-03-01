@@ -1,3 +1,4 @@
+import ContactInfo from "../Components/Contact/ContactInfo";
 import CommonBanner from "../Shared/Banner/CommonBanner";
 
 const ContactPage = () => {
@@ -8,6 +9,7 @@ const ContactPage = () => {
         heading="Contact Us"
         description="Would you like to try a dish?"
       ></CommonBanner>
+      <ContactInfo />
     </div>
   );
 };
