@@ -1,7 +1,9 @@
+import AOS from "aos";
+import "aos/dist/aos.css";
 const ChefCard = () => {
   return (
-    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 my-16">
-      <div className="bg-[#F3F3F3] border ">
+    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 my-12 overflow-x-hidden overflow-y-hidden">
+      <div className="bg-[#F3F3F3] border " data-aos="fade-up">
         <a href="#">
           <img
             className="rounded-t-lg h-72 w-full"
@@ -23,7 +25,7 @@ const ChefCard = () => {
           </button>
         </div>
       </div>
-      <div className="bg-[#F3F3F3] border ">
+      <div className="bg-[#F3F3F3] border " data-aos="zoom-in">
         <a href="#">
           <img
             className="rounded-t-lg h-72 w-full"
@@ -45,7 +47,7 @@ const ChefCard = () => {
           </button>
         </div>
       </div>
-      <div className=" bg-[#F3F3F3] border ">
+      <div className=" bg-[#F3F3F3] border " data-aos="zoom-out">
         <a href="#">
           <img
             className="rounded-t-lg h-72 w-full"
@@ -70,5 +72,7 @@ const ChefCard = () => {
     </div>
   );
 };
+
+AOS.init();
 
 export default ChefCard;

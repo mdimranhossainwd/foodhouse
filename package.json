@@ -11,6 +11,7 @@
   },
   "dependencies": {
     "add": "^2.0.6",
+    "aos": "^3.0.0-beta.6",
     "button": "^1.1.1",
     "localstorage": "^1.0.1",
     "match-sorter": "^6.3.1",
