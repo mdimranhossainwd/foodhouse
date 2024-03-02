@@ -1,6 +1,6 @@
 const SubHeading = ({ heading, subHeading }) => {
   return (
-    <div className="md:w-2/6 mx-auto text-center space-y-4">
+    <div className="md:w-2/6 mx-auto text-center space-y-4 my-8">
       <span className=" font-lobster text-[#F42643] text-md">
         ----{subHeading}----
       </span>
