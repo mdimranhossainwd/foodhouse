@@ -3,7 +3,7 @@ import SubHeading from "../Heading/SubHeading";
 const SubBaner = () => {
   return (
     <div
-      className=" min-h-[620px] text-white bg-fixed my-12"
+      className=" min-h-[620px] text-white bg-fixed my-12 bg-cover"
       style={{
         backgroundImage: "url(https://i.ibb.co/pPb9PhF/Rectangle-13.png)",
       }}
@@ -11,7 +11,7 @@ const SubBaner = () => {
       <div className="container mx-auto py-12">
         <SubHeading heading="From Our Menu" subHeading="Check it out" />
 
-        <div className="flex items-center gap-4 px-24 mx-auto my-16">
+        <div className="md:flex items-center gap-4 px-6 md:px-24 mx-auto my-16">
           <img
             className="object-cover w-full h-72
            "
@@ -21,7 +21,7 @@ const SubBaner = () => {
             data-aos-duration="3000"
           />
           <div
-            className="pl-16 "
+            className="md:pl-16 mt-10 md:mt-0"
             data-aos="flip-left"
             data-aos-easing="ease-out-cubic"
             data-aos-duration="2000"

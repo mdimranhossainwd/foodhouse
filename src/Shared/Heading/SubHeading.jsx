@@ -5,7 +5,7 @@ const SubHeading = ({ heading, subHeading }) => {
         ----{subHeading}----
       </span>
       <div className="border-t-2 border-b-2 py-4">
-        <h2 className="text-5xl font-lobster">{heading}</h2>
+        <h2 className="text-4xl lg:text-5xl font-lobster">{heading}</h2>
       </div>
     </div>
   );
