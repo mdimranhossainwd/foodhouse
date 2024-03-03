@@ -9,7 +9,7 @@ const TestimonialBanner = () => {
           "url(https://images.unsplash.com/photo-1543353071-873f17a7a088?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D)",
       }}
     >
-      <div>
+      <div data-aos="fade-up" data-aos-duration="1000">
         <SubHeading heading="Testimonials" subHeading="What Our Clients Say " />
         <div className="mb-10">
           <figure className="max-w-screen-md mx-auto text-center">
