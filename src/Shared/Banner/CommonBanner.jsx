@@ -1,7 +1,7 @@
 const CommonBanner = ({ bgImg, heading, description }) => {
   return (
     <div
-      className="hero min-h-[520px]"
+      className="hero min-h-[520px] mb-6"
       style={{
         backgroundImage: `url(${bgImg})`,
       }}

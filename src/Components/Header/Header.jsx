@@ -3,12 +3,42 @@ import { Link, NavLink } from "react-router-dom";
 const Header = () => {
   const Menu = (
     <>
-      <NavLink>Home</NavLink>
-      <NavLink to="/service">Services</NavLink>
-      <NavLink>Menu</NavLink>
-      <NavLink>Cart</NavLink>
-      <NavLink to="/contact">Contact</NavLink>
-      <NavLink>Login</NavLink>
+      <NavLink
+        className={({ isActive }) => (isActive ? "text-[#F42643]" : "")}
+        to="/"
+      >
+        Home
+      </NavLink>
+      <NavLink
+        className={({ isActive }) => (isActive ? "text-[#F42643]" : "")}
+        to="/service"
+      >
+        Services
+      </NavLink>
+      <NavLink
+        className={({ isActive }) => (isActive ? "text-[#F42643]" : "")}
+        to="/shop"
+      >
+        Shop
+      </NavLink>
+      <NavLink
+        className={({ isActive }) => (isActive ? "text-[#F42643]" : "")}
+        to="/cart"
+      >
+        Cart
+      </NavLink>
+      <NavLink
+        className={({ isActive }) => (isActive ? "text-[#F42643]" : "")}
+        to="/contact"
+      >
+        Contact
+      </NavLink>
+      <NavLink
+        className={({ isActive }) => (isActive ? "text-[#F42643]" : "")}
+        to="/login"
+      >
+        Login
+      </NavLink>
     </>
   );
 

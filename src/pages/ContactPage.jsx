@@ -1,3 +1,4 @@
+import { Helmet } from "react-helmet-async";
 import ContactForm from "../Components/Contact/ContactForm";
 import ContactInfo from "../Components/Contact/ContactInfo";
 import CommonBanner from "../Shared/Banner/CommonBanner";
@@ -5,6 +6,10 @@ import CommonBanner from "../Shared/Banner/CommonBanner";
 const ContactPage = () => {
   return (
     <div>
+      <Helmet>
+        <title>Recipe-Realm || Contact Page</title>
+      </Helmet>
+
       <CommonBanner
         bgImg="https://i.ibb.co/BBSQXjf/photo-1496412705862-e0088f16f791.jpg"
         heading="Contact Us"
