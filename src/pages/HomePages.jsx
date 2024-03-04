@@ -1,6 +1,7 @@
 import { Helmet } from "react-helmet-async";
 import OnlineCard from "../Components/Card/OnlineCard";
 import Chef from "../Components/Chef/Chef";
+import WhyChoose from "../Components/Choose/WhyChoose";
 import BestLetter from "../Components/Newsletter/BestLetter";
 import NewsLetter from "../Components/Newsletter/NewsLetter";
 import Banner from "../Shared/Banner/Banner";
@@ -17,6 +18,7 @@ const HomePages = () => {
       <BestLetter />
       <Chef />
       <SubBaner />
+      <WhyChoose />
       <NewsLetter />
       <TestimonialBanner />
     </div>
