@@ -1,4 +1,5 @@
 import { FaFacebook, FaGithub, FaGoogle } from "react-icons/fa";
+import { NavLink } from "react-router-dom";
 
 const Login = () => {
   return (
@@ -10,7 +11,7 @@ const Login = () => {
     >
       <div className="container mx-auto">
         <div className="hero min-h-screen ">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
+          <div className="grid grid-cols-1 items-center justify-center md:grid-cols-2 gap-5">
             <div>
               <img
                 className="w-full"
@@ -62,8 +63,11 @@ const Login = () => {
                   Sign In
                 </button>
                 <div className="text-md text-center font-medium ">
-                  <p className="font-bold text-md mb-3 text-[#F42643]">
-                    New here? Create a New Account
+                  <p className="text-md mb-3 text-[#F42643]">
+                    New here?{" "}
+                    <NavLink to="/register" className="font-bold">
+                      Create a New Account
+                    </NavLink>
                   </p>
                   <a href="#" className="text-[#444]">
                     Or sign in with
