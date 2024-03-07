@@ -91,7 +91,7 @@ const Header = () => {
           </div>
           <Link hrefLang="index.html">
             <img
-              className="w-40 h-14 bg-cover"
+              className="md:w-40 w-full md:h-14 bg-cover"
               src="https://i.ibb.co/cTdQQc1/asian-logo-1024x291.png"
               alt=""
             />
@@ -106,7 +106,7 @@ const Header = () => {
         <>
           {user?.email ? (
             <>
-              <div className="dropdown dropdown-end ml-12">
+              <div className="dropdown dropdown-end ml-28 md:ml-12">
                 <div
                   tabIndex={0}
                   role="button"
@@ -118,8 +118,11 @@ const Header = () => {
                 </div>
                 <ul
                   tabIndex={0}
-                  className="mt-3 z-[1] p-2 text-white menu dropdown-content bg-[#3b4655]"
+                  className="mt-3 z-[1] rounded-md p-2 text-white menu dropdown-content bg-[#3b4655]"
                 >
+                  <li>
+                    <a>{user?.displayName}</a>
+                  </li>
                   <li>
                     <a>{user?.email}</a>
                   </li>

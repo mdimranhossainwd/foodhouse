@@ -1,8 +1,11 @@
 import {
+  FacebookAuthProvider,
+  GoogleAuthProvider,
   createUserWithEmailAndPassword,
   getAuth,
   onAuthStateChanged,
   signInWithEmailAndPassword,
+  signInWithPopup,
   signOut,
   updateProfile,
 } from "firebase/auth";
@@ -11,6 +14,8 @@ import app from "../config/firebase.config";
 export const AuthContext = createContext();
 
 const auth = getAuth(app);
+const provider = new GoogleAuthProvider();
+const facebookProvider = new FacebookAuthProvider();
 
 const AuthProvider = ({ children }) => {
   const [user, setUser] = useState(null);
@@ -34,6 +39,20 @@ const AuthProvider = ({ children }) => {
     return signOut(auth);
   };
 
+  // GOOGLE SIGNUP/SIGNIN
+
+  const handleGoogle = () => {
+    setIsLoading(true);
+    return signInWithPopup(auth, provider);
+  };
+
+  // FACEBOOK
+
+  const handleToFacebook = () => {
+    setIsLoading(true);
+    return signInWithPopup(auth, facebookProvider);
+  };
+
   useEffect(() => {
     const unSubscribe = onAuthStateChanged(auth, (currentUser) => {
       setUser(currentUser);
@@ -54,7 +73,16 @@ const AuthProvider = ({ children }) => {
   };
 
   //   ALL FIREBASE VALUE HERE
-  const values = { createUser, login, logOut, handleUpdate, user, isloading };
+  const values = {
+    createUser,
+    login,
+    logOut,
+    handleUpdate,
+    user,
+    isloading,
+    handleGoogle,
+    handleToFacebook,
+  };
 
   return <AuthContext.Provider value={values}>{children}</AuthContext.Provider>;
 };
