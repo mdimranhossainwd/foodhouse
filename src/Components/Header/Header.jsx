@@ -1,6 +1,16 @@
+import { useContext } from "react";
 import { Link, NavLink } from "react-router-dom";
+import { AuthContext } from "../../Provider/AuthProvider";
 
 const Header = () => {
+  const { user, logOut } = useContext(AuthContext);
+
+  const handleLogOut = () => {
+    logOut()
+      .then(() => {})
+      .catch((error) => console.log(error));
+  };
+
   const Menu = (
     <>
       <NavLink
@@ -33,12 +43,17 @@ const Header = () => {
       >
         Contact
       </NavLink>
-      <NavLink
-        className={({ isActive }) => (isActive ? "text-[#F42643]" : "")}
-        to="/login"
-      >
-        Login
-      </NavLink>
+
+      {user?.email ? (
+        ""
+      ) : (
+        <NavLink
+          className={({ isActive }) => (isActive ? "text-[#F42643]" : "")}
+          to="/login"
+        >
+          Login
+        </NavLink>
+      )}
     </>
   );
 
@@ -87,6 +102,37 @@ const Header = () => {
             {Menu}
           </ul>
         </div>
+
+        <>
+          {user?.email ? (
+            <>
+              <div className="dropdown dropdown-end ml-12">
+                <div
+                  tabIndex={0}
+                  role="button"
+                  className="btn btn-ghost btn-circle avatar"
+                >
+                  <div className="w-10 rounded-full">
+                    <img src={user?.photoURL} />
+                  </div>
+                </div>
+                <ul
+                  tabIndex={0}
+                  className="mt-3 z-[1] p-2 text-white menu dropdown-content bg-[#3b4655]"
+                >
+                  <li>
+                    <a>{user?.email}</a>
+                  </li>
+                  <li onClick={handleLogOut}>
+                    <a>Logout</a>
+                  </li>
+                </ul>
+              </div>
+            </>
+          ) : (
+            ""
+          )}
+        </>
       </div>
     </div>
   );

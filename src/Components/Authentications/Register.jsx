@@ -1,10 +1,30 @@
+import { useContext } from "react";
 import { FaFacebook, FaGithub, FaGoogle } from "react-icons/fa";
 import { NavLink } from "react-router-dom";
+import { AuthContext } from "../../Provider/AuthProvider";
 
 const Register = () => {
+  const { createUser } = useContext(AuthContext);
+
+  const handleSignUp = (event) => {
+    event.preventDefault();
+    const form = event.target;
+    const name = form.name.value;
+    const email = form.email.value;
+    const password = form.password.value;
+    console.log(name, email, password);
+
+    createUser(email, password)
+      .then((result) => {
+        const user = result.user;
+        console.log("created user", user);
+      })
+      .catch((error) => console.log(error));
+  };
+
   return (
     <div
-      className="min-h-screen bg-cover bg-no-repeat "
+      className="min-h-screen bg-cover bg-no-repeat px-6 md:px-0"
       style={{
         backgroundImage: "url(https://i.ibb.co/gwxz2ZS/Rectangle-75.png)",
       }}
@@ -13,7 +33,7 @@ const Register = () => {
         <div className="hero min-h-screen ">
           <div className="grid grid-cols-1 items-center justify-center md:grid-cols-2 gap-5">
             <div className="w-full borderp-4 rounded-lg  sm:p-6 md:p-8 ">
-              <form className="space-y-6" action="#">
+              <form onSubmit={handleSignUp} className="space-y-6" action="#">
                 <h5 className="text-4xl text-center font-bold text-[#151515] ">
                   Sign Up
                 </h5>
@@ -28,7 +48,7 @@ const Register = () => {
                     type="name"
                     name="name"
                     id="name"
-                    className="bg-gray-50 border border-gray-300  block w-full p-2.5 dark:placeholder-gray-400 dark:text-white py-3 px-4"
+                    className="bg-gray-50 border border-gray-300  block w-full p-2.5 dark:placeholder-gray-400  py-3 px-4"
                     placeholder="Your Name"
                     required
                   />
@@ -44,7 +64,7 @@ const Register = () => {
                     type="email"
                     name="email"
                     id="email"
-                    className="bg-gray-50 border border-gray-300  block w-full p-2.5 dark:placeholder-gray-400 dark:text-white py-3 px-4"
+                    className="bg-gray-50 border border-gray-300  block w-full p-2.5 dark:placeholder-gray-400  py-3 px-4"
                     placeholder="Your mail address here ...."
                     required
                   />
@@ -61,7 +81,7 @@ const Register = () => {
                     name="password"
                     id="password"
                     placeholder="••••••••"
-                    className="bg-gray-50 border border-gray-300  block w-full p-2.5 dark:placeholder-gray-400 dark:text-white py-3 px-4"
+                    className="bg-gray-50 border border-gray-300  block w-full p-2.5 dark:placeholder-gray-400  py-3 px-4"
                     required
                   />
                 </div>

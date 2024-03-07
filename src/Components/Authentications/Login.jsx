@@ -1,10 +1,27 @@
+import { useContext } from "react";
 import { FaFacebook, FaGithub, FaGoogle } from "react-icons/fa";
 import { NavLink } from "react-router-dom";
+import { AuthContext } from "../../Provider/AuthProvider";
 
 const Login = () => {
+  const { login } = useContext(AuthContext);
+
+  const handleLogin = (event) => {
+    event.preventDefault();
+    const form = event.target;
+    const email = form.email.value;
+    const password = form.password.value;
+    login(email, password)
+      .then((result) => {
+        const user = result.user;
+        console.log(user);
+      })
+      .catch((error) => console.log(error));
+  };
+
   return (
     <div
-      className="min-h-screen bg-cover bg-no-repeat"
+      className="min-h-screen bg-cover bg-no-repeat px-6 md:px-0"
       style={{
         backgroundImage: "url(https://i.ibb.co/gwxz2ZS/Rectangle-75.png)",
       }}
@@ -20,7 +37,7 @@ const Login = () => {
               />
             </div>
             <div className="w-full borderp-4 rounded-lg  sm:p-6 md:p-8 ">
-              <form className="space-y-6" action="#">
+              <form onSubmit={handleLogin} className="space-y-6" action="#">
                 <h5 className="text-4xl text-center font-bold text-[#151515] ">
                   Log In
                 </h5>
@@ -35,7 +52,7 @@ const Login = () => {
                     type="email"
                     name="email"
                     id="email"
-                    className="bg-gray-50 border border-gray-300  block w-full p-2.5 dark:placeholder-gray-400 dark:text-white py-3 px-4"
+                    className="bg-gray-50 border border-gray-300  block w-full p-2.5 dark:placeholder-gray-400  py-3 px-4"
                     placeholder="Your mail address here ...."
                     required
                   />
@@ -52,7 +69,7 @@ const Login = () => {
                     name="password"
                     id="password"
                     placeholder="••••••••"
-                    className="bg-gray-50 border border-gray-300  block w-full p-2.5 dark:placeholder-gray-400 dark:text-white py-3 px-4"
+                    className="bg-gray-50 border border-gray-300  block w-full p-2.5 dark:placeholder-gray-400  py-3 px-4"
                     required
                   />
                 </div>
