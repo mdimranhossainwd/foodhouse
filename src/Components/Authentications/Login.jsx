@@ -1,10 +1,10 @@
 import { useContext } from "react";
 import { FaFacebook, FaGithub, FaGoogle } from "react-icons/fa";
-import { NavLink, useNavigate } from "react-router-dom";
+import { Link, NavLink, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../Provider/AuthProvider";
 
 const Login = () => {
-  const { login } = useContext(AuthContext);
+  const { login, handleGoogle, handleToFacebook } = useContext(AuthContext);
   const navigate = useNavigate();
 
   const handleLogin = (event) => {
@@ -16,6 +16,26 @@ const Login = () => {
       .then((result) => {
         const user = result.user;
         console.log(user);
+        navigate("/");
+      })
+      .catch((error) => console.log(error));
+  };
+
+  const triggerGoogle = () => {
+    handleGoogle()
+      .then((result) => {
+        const user = result.user;
+        console.log("Current User", user);
+        navigate("/");
+      })
+      .catch((error) => console.log(error));
+  };
+
+  const triggerFacebook = () => {
+    handleToFacebook()
+      .then((result) => {
+        const user = result.user;
+        console.log("Current FB user", user);
         navigate("/");
       })
       .catch((error) => console.log(error));
@@ -93,8 +113,12 @@ const Login = () => {
                   </a>
                 </div>
                 <div className="flex items-center gap-8 text-2xl rounded-full py-4 text-center justify-center">
-                  <FaFacebook />
-                  <FaGoogle />
+                  <Link onClick={triggerFacebook}>
+                    <FaFacebook />
+                  </Link>
+                  <Link onClick={triggerGoogle}>
+                    <FaGoogle />
+                  </Link>
                   <FaGithub />
                 </div>
               </form>
