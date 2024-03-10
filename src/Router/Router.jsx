@@ -3,6 +3,7 @@ import Login from "../Components/Authentications/Login";
 import Register from "../Components/Authentications/Register";
 import Error from "../Components/Error/Error";
 import ContactPage from "../pages/ContactPage";
+import Dashboard from "../pages/Dashboard/Dashboard";
 import HomePages from "../pages/HomePages";
 import MainLayout from "../pages/MainLayout";
 import ShopPage from "../pages/ShopPage";
@@ -26,6 +27,10 @@ export const router = createBrowserRouter([
         element: <ContactPage />,
       },
     ],
+  },
+  {
+    path: "/dashboard",
+    element: <Dashboard />,
   },
   {
     path: "/login",

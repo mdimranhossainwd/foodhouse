@@ -33,6 +33,12 @@ const Header = () => {
       </NavLink>
       <NavLink
         className={({ isActive }) => (isActive ? "text-[#F42643]" : "")}
+        to="/dashboard"
+      >
+        Dashboard
+      </NavLink>
+      <NavLink
+        className={({ isActive }) => (isActive ? "text-[#F42643]" : "")}
         to="/cart"
       >
         Cart

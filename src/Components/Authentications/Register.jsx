@@ -1,6 +1,7 @@
 import { useContext } from "react";
 import { FaFacebook, FaGithub, FaGoogle } from "react-icons/fa";
 import { Link, NavLink, useNavigate } from "react-router-dom";
+import Swal from "sweetalert2";
 import { AuthContext } from "../../Provider/AuthProvider";
 
 const Register = () => {
@@ -19,6 +20,12 @@ const Register = () => {
     createUser(email, password)
       .then((result) => {
         const user = result.user;
+        Swal.fire({
+          title: "Sign Up Successfully!",
+          icon: "success",
+          showConfirmButton: false,
+          timer: 2500,
+        });
         console.log("created user", user);
         navigate("/");
       })
@@ -29,6 +36,12 @@ const Register = () => {
     handleGoogle()
       .then((result) => {
         const user = result.user;
+        Swal.fire({
+          title: "Sign Up Successfully",
+          icon: "success",
+          showConfirmButton: false,
+          timer: 2500,
+        });
         console.log("Current User", user);
         navigate("/");
       })

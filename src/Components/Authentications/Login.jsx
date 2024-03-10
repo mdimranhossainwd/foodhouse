@@ -1,10 +1,13 @@
 import { useContext } from "react";
 import { FaFacebook, FaGithub, FaGoogle } from "react-icons/fa";
 import { Link, NavLink, useNavigate } from "react-router-dom";
+import Swal from "sweetalert2";
 import { AuthContext } from "../../Provider/AuthProvider";
+import useAxios from "../../hooks/useAxios";
 
 const Login = () => {
   const { login, handleGoogle, handleToFacebook } = useContext(AuthContext);
+  const axios = useAxios();
   const navigate = useNavigate();
 
   const handleLogin = (event) => {
@@ -15,7 +18,13 @@ const Login = () => {
     login(email, password)
       .then((result) => {
         const user = result.user;
-        console.log(user);
+        axios.post("/auth/access-token", user);
+        Swal.fire({
+          title: "Login Successfully",
+          icon: "success",
+          showConfirmButton: false,
+          timer: 2500,
+        });
         navigate("/");
       })
       .catch((error) => console.log(error));
@@ -25,7 +34,14 @@ const Login = () => {
     handleGoogle()
       .then((result) => {
         const user = result.user;
-        console.log("Current User", user);
+        axios.post("/auth/access-token", user);
+
+        Swal.fire({
+          title: "Google Log In Successfully",
+          icon: "success",
+          showConfirmButton: false,
+          timer: 2500,
+        });
         navigate("/");
       })
       .catch((error) => console.log(error));
