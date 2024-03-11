@@ -1,66 +1,13 @@
-import { FaCalendarAlt, FaHome } from "react-icons/fa";
-import { FaCartShopping } from "react-icons/fa6";
-import { FiShoppingCart } from "react-icons/fi";
-import { IoMdMail, IoMdMenu } from "react-icons/io";
-import { MdOutlineCreditCard, MdOutlinePreview } from "react-icons/md";
-import { TbBrandBooking } from "react-icons/tb";
-import { Link, NavLink, Outlet } from "react-router-dom";
+import { Outlet } from "react-router-dom";
+import DashboardMenu from "./DashboardMenu";
 
 const Dashboard = () => {
-  const DashboardMenu = (
-    <div className=" gap-5 grid grid-cols-1 ">
-      <NavLink className="flex items-center gap-4 text-lg font-semibold">
-        {" "}
-        <FaHome /> User Home
-      </NavLink>
-      <NavLink className="flex items-center gap-4 text-lg font-semibold">
-        <FaCalendarAlt /> Reservation
-      </NavLink>
-      <NavLink className="flex items-center gap-4 text-lg font-semibold">
-        <MdOutlineCreditCard /> Payment History
-      </NavLink>
-      <NavLink className="flex items-center gap-4 text-lg font-semibold">
-        <FiShoppingCart /> My Cart
-      </NavLink>
-      <NavLink className="flex items-center gap-4 text-lg font-semibold">
-        <MdOutlinePreview /> Add Review
-      </NavLink>
-      <NavLink className="flex items-center gap-4 text-lg font-semibold">
-        <TbBrandBooking /> My Booking
-      </NavLink>
-      <hr />
-
-      <NavLink className="flex items-center gap-4 text-lg font-semibold">
-        <FaHome /> Home
-      </NavLink>
-      <NavLink className="flex items-center gap-4 text-lg font-semibold">
-        <IoMdMenu /> Menu
-      </NavLink>
-      <NavLink className="flex items-center gap-4 text-lg font-semibold">
-        <FaCartShopping /> Shop
-      </NavLink>
-      <NavLink className="flex items-center gap-4 text-lg font-semibold">
-        <IoMdMail /> Contact
-      </NavLink>
-    </div>
-  );
-
   return (
-    <div>
-      <div className="w-64 max-h-full bg-[#F42643] text-lg text-white">
-        <Link>
-          <h2 className=" font-lobster text-5xl py-8 text-center ">
-            Resturant
-          </h2>
-          <hr />
-        </Link>
-
-        <ul className="menu p-4 gap-6 w-80 text-white font-medium min-h-full">
-          {/* Sidebar content here */}
-          {DashboardMenu}
-        </ul>
+    <div className="lg:flex gap-5">
+      <div className="min-h-full bg-[#F42643]">
+        <DashboardMenu />
       </div>
-      <div>
+      <div className="md:flex-1 bg-[#F8F8F8]">
         <Outlet></Outlet>
       </div>
     </div>

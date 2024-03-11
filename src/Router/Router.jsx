@@ -4,6 +4,7 @@ import Register from "../Components/Authentications/Register";
 import Error from "../Components/Error/Error";
 import ContactPage from "../pages/ContactPage";
 import Dashboard from "../pages/Dashboard/Dashboard";
+import UserProfile from "../pages/Dashboard/UserHome/UserProfile";
 import HomePages from "../pages/HomePages";
 import MainLayout from "../pages/MainLayout";
 import ShopPage from "../pages/ShopPage";
@@ -31,6 +32,12 @@ export const router = createBrowserRouter([
   {
     path: "/dashboard",
     element: <Dashboard />,
+    children: [
+      {
+        path: "/dashboard/userdashboard",
+        element: <UserProfile />,
+      },
+    ],
   },
   {
     path: "/login",
