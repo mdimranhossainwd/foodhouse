@@ -5,6 +5,7 @@ import Error from "../Components/Error/Error";
 import ContactPage from "../pages/ContactPage";
 import Dashboard from "../pages/Dashboard/Dashboard";
 import UserProfile from "../pages/Dashboard/UserHome/UserProfile";
+import UserReservartion from "../pages/Dashboard/UserHome/UserReservartion";
 import HomePages from "../pages/HomePages";
 import MainLayout from "../pages/MainLayout";
 import ShopPage from "../pages/ShopPage";
@@ -36,6 +37,10 @@ export const router = createBrowserRouter([
       {
         path: "/dashboard/userdashboard",
         element: <UserProfile />,
+      },
+      {
+        path: "reservation",
+        element: <UserReservartion />,
       },
     ],
   },

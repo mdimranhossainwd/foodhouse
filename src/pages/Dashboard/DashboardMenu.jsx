@@ -16,7 +16,10 @@ const DashboardMenu = () => {
         {" "}
         <FaHome /> User Home
       </NavLink>
-      <NavLink className="flex items-center gap-4 text-lg font-semibold">
+      <NavLink
+        to="reservation"
+        className="flex items-center gap-4 text-lg font-semibold"
+      >
         <FaCalendarAlt /> Reservation
       </NavLink>
       <NavLink className="flex items-center gap-4 text-lg font-semibold">
