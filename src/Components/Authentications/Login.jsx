@@ -19,6 +19,7 @@ const Login = () => {
       .then((result) => {
         const user = result.user;
         axios.post("/auth/access-token", user);
+
         Swal.fire({
           title: "Login Successfully",
           icon: "success",

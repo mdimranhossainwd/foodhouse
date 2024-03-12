@@ -31,12 +31,7 @@ const Header = () => {
       >
         Shop
       </NavLink>
-      <NavLink
-        className={({ isActive }) => (isActive ? "text-[#F42643]" : "")}
-        to="/dashboard"
-      >
-        Dashboard
-      </NavLink>
+
       <NavLink
         className={({ isActive }) => (isActive ? "text-[#F42643]" : "")}
         to="/cart"
@@ -51,7 +46,12 @@ const Header = () => {
       </NavLink>
 
       {user?.email ? (
-        ""
+        <NavLink
+          className={({ isActive }) => (isActive ? "text-[#F42643]" : "")}
+          to="/dashboard"
+        >
+          Dashboard
+        </NavLink>
       ) : (
         <NavLink
           className={({ isActive }) => (isActive ? "text-[#F42643]" : "")}

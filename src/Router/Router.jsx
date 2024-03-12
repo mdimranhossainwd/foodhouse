@@ -11,6 +11,7 @@ import UserReview from "../pages/Dashboard/UserHome/UserReview";
 import HomePages from "../pages/HomePages";
 import MainLayout from "../pages/MainLayout";
 import ShopPage from "../pages/ShopPage";
+import PrivateRouter from "./PrivateRouter";
 
 export const router = createBrowserRouter([
   {
@@ -24,7 +25,11 @@ export const router = createBrowserRouter([
       },
       {
         path: "/shop",
-        element: <ShopPage />,
+        element: (
+          <PrivateRouter>
+            <ShopPage />
+          </PrivateRouter>
+        ),
       },
       {
         path: "/contact",
@@ -34,7 +39,11 @@ export const router = createBrowserRouter([
   },
   {
     path: "/dashboard",
-    element: <Dashboard />,
+    element: (
+      <PrivateRouter>
+        <Dashboard />
+      </PrivateRouter>
+    ),
     errorElement: <Error />,
     children: [
       {
