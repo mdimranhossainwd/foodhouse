@@ -1,4 +1,4 @@
-import { FaCalendarAlt, FaHome } from "react-icons/fa";
+import { FaCalendarAlt, FaHome, FaRegCreditCard } from "react-icons/fa";
 import { FaCartShopping } from "react-icons/fa6";
 import { FiShoppingCart } from "react-icons/fi";
 import { IoMdMail, IoMdMenu } from "react-icons/io";
@@ -22,14 +22,20 @@ const DashboardMenu = () => {
       >
         <FaCalendarAlt /> Reservation
       </NavLink>
-      <NavLink className="flex items-center gap-4 text-lg font-semibold">
-        <MdOutlineCreditCard /> Payment History
+      <NavLink
+        to="payment"
+        className="flex items-center gap-4 text-lg font-semibold"
+      >
+        <FaRegCreditCard /> Payment
       </NavLink>
       <NavLink className="flex items-center gap-4 text-lg font-semibold">
         <FiShoppingCart /> My Cart
       </NavLink>
       <NavLink className="flex items-center gap-4 text-lg font-semibold">
         <MdOutlinePreview /> Add Review
+      </NavLink>
+      <NavLink className="flex items-center gap-4 text-lg font-semibold">
+        <MdOutlineCreditCard /> Payment History
       </NavLink>
       <NavLink className="flex items-center gap-4 text-lg font-semibold">
         <TbBrandBooking /> My Booking

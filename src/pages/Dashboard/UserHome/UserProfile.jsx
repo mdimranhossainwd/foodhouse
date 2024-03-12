@@ -11,7 +11,6 @@ import { AuthContext } from "../../../Provider/AuthProvider";
 
 const UserProfile = () => {
   const { user } = useContext(AuthContext);
-  console.log(user);
 
   return (
     <>

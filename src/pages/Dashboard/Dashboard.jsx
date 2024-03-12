@@ -3,7 +3,7 @@ import DashboardMenu from "./DashboardMenu";
 
 const Dashboard = () => {
   return (
-    <div className="lg:flex gap-5">
+    <div className="lg:flex ">
       <div className="min-h-full bg-[#F42643]">
         <DashboardMenu />
       </div>

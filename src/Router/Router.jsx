@@ -4,6 +4,7 @@ import Register from "../Components/Authentications/Register";
 import Error from "../Components/Error/Error";
 import ContactPage from "../pages/ContactPage";
 import Dashboard from "../pages/Dashboard/Dashboard";
+import Payment from "../pages/Dashboard/Payment/Payment";
 import UserProfile from "../pages/Dashboard/UserHome/UserProfile";
 import UserReservartion from "../pages/Dashboard/UserHome/UserReservartion";
 import HomePages from "../pages/HomePages";
@@ -33,6 +34,7 @@ export const router = createBrowserRouter([
   {
     path: "/dashboard",
     element: <Dashboard />,
+    errorElement: <Error />,
     children: [
       {
         path: "/dashboard/userdashboard",
@@ -41,6 +43,10 @@ export const router = createBrowserRouter([
       {
         path: "reservation",
         element: <UserReservartion />,
+      },
+      {
+        path: "payment",
+        element: <Payment />,
       },
     ],
   },
