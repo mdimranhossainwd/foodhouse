@@ -7,6 +7,7 @@ import Dashboard from "../pages/Dashboard/Dashboard";
 import Payment from "../pages/Dashboard/Payment/Payment";
 import UserProfile from "../pages/Dashboard/UserHome/UserProfile";
 import UserReservartion from "../pages/Dashboard/UserHome/UserReservartion";
+import UserReview from "../pages/Dashboard/UserHome/UserReview";
 import HomePages from "../pages/HomePages";
 import MainLayout from "../pages/MainLayout";
 import ShopPage from "../pages/ShopPage";
@@ -47,6 +48,10 @@ export const router = createBrowserRouter([
       {
         path: "payment",
         element: <Payment />,
+      },
+      {
+        path: "userreview",
+        element: <UserReview />,
       },
     ],
   },

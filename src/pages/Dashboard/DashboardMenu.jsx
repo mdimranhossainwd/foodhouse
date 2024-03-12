@@ -31,7 +31,10 @@ const DashboardMenu = () => {
       <NavLink className="flex items-center gap-4 text-lg font-semibold">
         <FiShoppingCart /> My Cart
       </NavLink>
-      <NavLink className="flex items-center gap-4 text-lg font-semibold">
+      <NavLink
+        to="userreview"
+        className="flex items-center gap-4 text-lg font-semibold"
+      >
         <MdOutlinePreview /> Add Review
       </NavLink>
       <NavLink className="flex items-center gap-4 text-lg font-semibold">
