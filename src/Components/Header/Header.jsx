@@ -1,9 +1,13 @@
 import { useContext } from "react";
+import { LuShoppingCart } from "react-icons/lu";
 import { Link, NavLink } from "react-router-dom";
 import { AuthContext } from "../../Provider/AuthProvider";
+import useCarts from "../../hooks/useCarts";
 
 const Header = () => {
   const { user, logOut } = useContext(AuthContext);
+
+  const [cart] = useCarts();
 
   const handleLogOut = () => {
     logOut()
@@ -34,24 +38,27 @@ const Header = () => {
 
       <NavLink
         className={({ isActive }) => (isActive ? "text-[#F42643]" : "")}
-        to="/cart"
-      >
-        Cart
-      </NavLink>
-      <NavLink
-        className={({ isActive }) => (isActive ? "text-[#F42643]" : "")}
         to="/contact"
       >
         Contact
       </NavLink>
 
       {user?.email ? (
-        <NavLink
-          className={({ isActive }) => (isActive ? "text-[#F42643]" : "")}
-          to="/dashboard"
-        >
-          Dashboard
-        </NavLink>
+        <>
+          <NavLink
+            className={({ isActive }) => (isActive ? "text-[#F42643]" : "")}
+            to="/dashboard"
+          >
+            Dashboard
+          </NavLink>
+
+          <NavLink className="bg-[#F42643] p-3 flex rounded-full border ">
+            <LuShoppingCart />
+          </NavLink>
+          <div className=" bg-white text-black px-1 text-sm font-bold rounded-full absolute right-[104px] top-14">
+            {cart.length}
+          </div>
+        </>
       ) : (
         <NavLink
           className={({ isActive }) => (isActive ? "text-[#F42643]" : "")}
@@ -104,7 +111,7 @@ const Header = () => {
           </Link>
         </div>
         <div className="navbar-end hidden lg:flex">
-          <ul className="menu menu-horizontal px-1 text-white text-lg gap-5 font-medium">
+          <ul className="menu menu-horizontal px-1 items-center text-white text-lg gap-5 font-medium">
             {Menu}
           </ul>
         </div>

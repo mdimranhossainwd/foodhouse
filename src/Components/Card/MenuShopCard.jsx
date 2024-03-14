@@ -2,10 +2,12 @@ import { useContext } from "react";
 import Swal from "sweetalert2";
 import { AuthContext } from "../../Provider/AuthProvider";
 import useAxios from "../../hooks/useAxios";
+import useCarts from "../../hooks/useCarts";
 
 const MenuShopCard = ({ menu }) => {
   const { _id, str_Name, str_Thumb, str_Introduction, str_Prize } = menu || {};
   const { user } = useContext(AuthContext);
+  const [, refetch] = useCarts();
   const axios = useAxios();
   const handleAddtoCart = () => {
     console.log("User", user.email);
@@ -20,13 +22,14 @@ const MenuShopCard = ({ menu }) => {
 
       axios.post("/additem", addItem).then((res) => {
         console.log(res.data);
-        if (res.data) {
+        if (res.data.insertedId) {
           Swal.fire({
             title: `${str_Name}`,
             text: "Food is Added to The Cart",
             icon: "success",
             showConfirmButton: false,
           });
+          refetch();
         }
       });
     }

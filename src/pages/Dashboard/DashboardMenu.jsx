@@ -28,7 +28,10 @@ const DashboardMenu = () => {
       >
         <FaRegCreditCard /> Payment
       </NavLink>
-      <NavLink className="flex items-center gap-4 text-lg font-semibold">
+      <NavLink
+        to="mycart"
+        className="flex items-center gap-4 text-lg font-semibold"
+      >
         <FiShoppingCart /> My Cart
       </NavLink>
       <NavLink
@@ -45,7 +48,7 @@ const DashboardMenu = () => {
       </NavLink>
       <hr />
 
-      <NavLink className="flex items-center gap-4 text-lg font-semibold">
+      <NavLink to="/" className="flex items-center gap-4 text-lg font-semibold">
         <FaHome /> Home
       </NavLink>
       <NavLink className="flex items-center gap-4 text-lg font-semibold">
