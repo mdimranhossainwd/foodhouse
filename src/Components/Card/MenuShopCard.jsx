@@ -6,6 +6,7 @@ import useCarts from "../../hooks/useCarts";
 
 const MenuShopCard = ({ menu }) => {
   const { _id, str_Name, str_Thumb, str_Introduction, str_Prize } = menu || {};
+
   const { user } = useContext(AuthContext);
   const [, refetch] = useCarts();
   const axios = useAxios();
