@@ -3,48 +3,48 @@
     "str_Name": "Margherita Pizza",
     "str_Thumb": "https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?q=80&w=1381&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     "str_Introduction": "Classic Italian pizza topped with tomato sauce, mozzarella cheese, and fresh basil leaves.",
-    "str_Prize": 250
+    "str_Prize": 93.47
   },
   {
     "str_Name": "Chicken Caesar Salad",
     "str_Thumb": "https://images.unsplash.com/photo-1546069901-ba9599a7e63c?q=80&w=1480&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     "str_Introduction": "Crisp romaine lettuce tossed with grilled chicken, parmesan cheese, croutons, and Caesar dressing.",
-    "str_Prize": 700
+    "str_Prize": 70.13
   },
   {
     "str_Name": "Spaghetti Bolognese",
     "str_Thumb": "https://images.unsplash.com/photo-1614777986387-015c2a89b696?q=80&w=1374&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     "str_Introduction": "Spaghetti pasta served with a rich and hearty meat sauce, made with ground beef, tomatoes, and herbs.",
-    "str_Prize": 230
+    "str_Prize": 23.94
   },
   {
     "str_Name": "Grilled Salmon",
     "str_Thumb": "https://images.unsplash.com/photo-1580959375944-abd7e991f971?q=80&w=1376&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     "str_Introduction": "Fresh Atlantic salmon fillet grilled to perfection and served with a side of steamed vegetables.",
-    "str_Prize": 150
+    "str_Prize": 27.0
   },
   {
     "str_Name": "Vegetable Stir-Fry",
     "str_Thumb": "https://images.unsplash.com/photo-1511910849309-0dffb8785146?q=80&w=1374&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     "str_Introduction": "Assorted fresh vegetables stir-fried in a savory sauce, served over steamed rice.",
-    "str_Prize": 320
+    "str_Prize": 50.17
   },
   {
     "str_Name": "Cheeseburger",
     "str_Thumb": "https://images.unsplash.com/photo-1608767221051-2b9d18f35a2f?q=80&w=1374&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     "str_Introduction": "Juicy beef patty topped with melted cheese, lettuce, tomato, onions, pickles, and mayonnaise, served on a toasted bun.",
-    "str_Prize": 630
+    "str_Prize": 91.5
   },
   {
     "str_Name": "Mango Smoothie",
     "str_Thumb": "https://images.unsplash.com/photo-1604298331663-de303fbc7059?q=80&w=1374&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     "str_Introduction": "Refreshing smoothie made with ripe mangoes, yogurt, and a splash of orange juice.",
-    "str_Prize": 210
+    "str_Prize": 20.7
   },
   {
     "str_Name": "Chocolate Brownie",
     "str_Thumb": "https://images.unsplash.com/photo-1590841609987-4ac211afdde1?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     "str_Introduction": "Decadent chocolate brownie served warm with a scoop of vanilla ice cream and drizzled with chocolate sauce.",
-    "str_Prize": 111
+    "str_Prize": 60.1
   }
 ]

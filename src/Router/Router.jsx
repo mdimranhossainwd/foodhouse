@@ -1,6 +1,7 @@
 import { createBrowserRouter } from "react-router-dom";
 import Login from "../Components/Authentications/Login";
 import Register from "../Components/Authentications/Register";
+import AdminProfile from "../Components/Dashboard/Admin/AdminProfile";
 import Error from "../Components/Error/Error";
 import ContactPage from "../pages/ContactPage";
 import Dashboard from "../pages/Dashboard/Dashboard";
@@ -66,6 +67,10 @@ export const router = createBrowserRouter([
       {
         path: "mycart",
         element: <MyCartPage />,
+      },
+      {
+        path: "adminhome",
+        element: <AdminProfile />,
       },
     ],
   },

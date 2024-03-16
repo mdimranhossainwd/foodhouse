@@ -10,40 +10,84 @@ const DashboardMenu = () => {
   const DashboardMenu = (
     <div className=" gap-5 grid grid-cols-1 ">
       <NavLink
+        to="adminhome"
+        className={({ isActive }) =>
+          isActive
+            ? "flex items-center gap-4 text-lg text-black font-semibold"
+            : "flex items-center gap-4 text-lg font-semibold"
+        }
+      >
+        <FaCalendarAlt /> Admin Home
+      </NavLink>
+      <NavLink
         to="/dashboard/userdashboard"
-        className="flex items-center gap-4 text-lg font-semibold"
+        className={({ isActive }) =>
+          isActive
+            ? "flex items-center gap-4 text-lg text-black font-semibold"
+            : "flex items-center gap-4 text-lg font-semibold"
+        }
       >
         {" "}
         <FaHome /> User Home
       </NavLink>
       <NavLink
         to="reservation"
-        className="flex items-center gap-4 text-lg font-semibold"
+        className={({ isActive }) =>
+          isActive
+            ? "flex items-center gap-4 text-lg text-black font-semibold"
+            : "flex items-center gap-4 text-lg font-semibold"
+        }
       >
         <FaCalendarAlt /> Reservation
       </NavLink>
       <NavLink
         to="payment"
-        className="flex items-center gap-4 text-lg font-semibold"
+        className={({ isActive }) =>
+          isActive
+            ? "flex items-center gap-4 text-lg text-black font-semibold"
+            : "flex items-center gap-4 text-lg font-semibold"
+        }
       >
         <FaRegCreditCard /> Payment
       </NavLink>
       <NavLink
         to="mycart"
-        className="flex items-center gap-4 text-lg font-semibold"
+        className={({ isActive }) =>
+          isActive
+            ? "flex items-center gap-4 text-lg text-black font-semibold"
+            : "flex items-center gap-4 text-lg font-semibold"
+        }
       >
         <FiShoppingCart /> My Cart
       </NavLink>
       <NavLink
         to="userreview"
-        className="flex items-center gap-4 text-lg font-semibold"
+        className={({ isActive }) =>
+          isActive
+            ? "flex items-center gap-4 text-lg text-black font-semibold"
+            : "flex items-center gap-4 text-lg font-semibold"
+        }
       >
         <MdOutlinePreview /> Add Review
       </NavLink>
-      <NavLink className="flex items-center gap-4 text-lg font-semibold">
+      <NavLink
+        to="paymenthistory"
+        className={({ isActive }) =>
+          isActive
+            ? "flex items-center gap-4 text-lg text-black font-semibold"
+            : "flex items-center gap-4 text-lg font-semibold"
+        }
+      >
         <MdOutlineCreditCard /> Payment History
       </NavLink>
-      <NavLink className="flex items-center gap-4 text-lg font-semibold">
+      <NavLink
+        to="booking"
+        className={({ isActive }) =>
+          isActive
+            ? "flex items-center gap-4 text-lg text-black font-semibold"
+            : "flex items-center gap-4 text-lg font-semibold"
+        }
+      >
         <TbBrandBooking /> My Booking
       </NavLink>
       <hr />
