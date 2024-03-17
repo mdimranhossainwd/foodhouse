@@ -35,8 +35,25 @@ const Login = () => {
     handleGoogle()
       .then((result) => {
         const user = result.user;
+        const mail = user.email;
+        const name = user.displayName;
+        const userInfo = { mail, name };
+        console.log(mail, name);
         axios.post("/auth/access-token", user);
+        axios.post("/user", userInfo).then((res) => {
+          if (res.data.insertedId) {
+            console.log("user added to the database");
 
+            Swal.fire({
+              position: "top-end",
+              icon: "success",
+              title: "User created successfully.",
+              showConfirmButton: false,
+              timer: 1500,
+            });
+            navigate("/");
+          }
+        });
         Swal.fire({
           title: "Google Log In Successfully",
           icon: "success",

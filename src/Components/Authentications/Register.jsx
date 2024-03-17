@@ -3,11 +3,13 @@ import { FaFacebook, FaGithub, FaGoogle } from "react-icons/fa";
 import { Link, NavLink, useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
 import { AuthContext } from "../../Provider/AuthProvider";
+import useAxios from "../../hooks/useAxios";
 
 const Register = () => {
   const { createUser, handleGoogle, handleToFacebook } =
     useContext(AuthContext);
   const navigate = useNavigate();
+  const axios = useAxios();
 
   const handleSignUp = (event) => {
     event.preventDefault();
@@ -15,11 +17,31 @@ const Register = () => {
     const name = form.name.value;
     const email = form.email.value;
     const password = form.password.value;
-    console.log(name, email, password);
 
     createUser(email, password)
       .then((result) => {
         const user = result.user;
+        const userInfo = {
+          displayName: name,
+          email: user?.email,
+        };
+        console.log(userInfo);
+
+        axios.post("/user", userInfo).then((res) => {
+          if (res.data.insertedId) {
+            console.log("user added to the database");
+
+            Swal.fire({
+              position: "top-center",
+              icon: "success",
+              title: "User created successfully.",
+              showConfirmButton: false,
+              timer: 1500,
+            });
+            navigate("/");
+          }
+        });
+
         Swal.fire({
           title: "Sign Up Successfully!",
           icon: "success",
@@ -36,6 +58,25 @@ const Register = () => {
     handleGoogle()
       .then((result) => {
         const user = result.user;
+        const mail = user.email;
+        const name = user.displayName;
+        const userInfo = { mail, name };
+        console.log(user);
+        axios.post("/user", userInfo).then((res) => {
+          if (res.data.insertedId) {
+            console.log("user added to the database");
+
+            Swal.fire({
+              position: "top-center",
+              icon: "success",
+              title: "User created successfully.",
+              showConfirmButton: false,
+              timer: 1500,
+            });
+            navigate("/");
+          }
+        });
+
         Swal.fire({
           title: "Sign Up Successfully",
           icon: "success",

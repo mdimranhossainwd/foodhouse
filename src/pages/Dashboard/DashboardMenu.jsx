@@ -1,4 +1,9 @@
-import { FaCalendarAlt, FaHome, FaRegCreditCard } from "react-icons/fa";
+import {
+  FaCalendarAlt,
+  FaHome,
+  FaRegCreditCard,
+  FaUsers,
+} from "react-icons/fa";
 import { FaCartShopping } from "react-icons/fa6";
 import { FiShoppingCart } from "react-icons/fi";
 import { IoMdMail, IoMdMenu } from "react-icons/io";
@@ -18,6 +23,16 @@ const DashboardMenu = () => {
         }
       >
         <FaCalendarAlt /> Admin Home
+      </NavLink>
+      <NavLink
+        to="alluser"
+        className={({ isActive }) =>
+          isActive
+            ? "flex items-center gap-4 text-lg text-black font-semibold"
+            : "flex items-center gap-4 text-lg font-semibold"
+        }
+      >
+        <FaUsers /> All User
       </NavLink>
       <NavLink
         to="/dashboard/userdashboard"

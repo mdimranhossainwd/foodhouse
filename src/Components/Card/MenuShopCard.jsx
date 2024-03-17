@@ -10,6 +10,7 @@ const MenuShopCard = ({ menu }) => {
   const { user } = useContext(AuthContext);
   const [, refetch] = useCarts();
   const axios = useAxios();
+
   const handleAddtoCart = () => {
     console.log("User", user.email);
     if (user && user?.email) {
@@ -61,7 +62,7 @@ const MenuShopCard = ({ menu }) => {
             </a>
           </div>
 
-          <p className="mb-3 font-normal text-[#151515] ">{str_Introduction}</p>
+          <p className="mb-3 font-normal text-[#151515]">{str_Introduction}</p>
 
           <button
             onClick={handleAddtoCart}
