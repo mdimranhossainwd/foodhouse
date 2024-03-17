@@ -6,9 +6,11 @@ import {
 } from "react-icons/fa";
 import { FaCartShopping } from "react-icons/fa6";
 import { FiShoppingCart } from "react-icons/fi";
+import { GiForkKnifeSpoon } from "react-icons/gi";
 import { IoMdMail, IoMdMenu } from "react-icons/io";
 import { MdOutlineCreditCard, MdOutlinePreview } from "react-icons/md";
 import { TbBrandBooking } from "react-icons/tb";
+
 import { Link, NavLink } from "react-router-dom";
 
 const DashboardMenu = () => {
@@ -33,6 +35,16 @@ const DashboardMenu = () => {
         }
       >
         <FaUsers /> All User
+      </NavLink>
+      <NavLink
+        to="additem"
+        className={({ isActive }) =>
+          isActive
+            ? "flex items-center gap-4 text-lg text-black font-semibold"
+            : "flex items-center gap-4 text-lg font-semibold"
+        }
+      >
+        <GiForkKnifeSpoon /> Add Item
       </NavLink>
       <NavLink
         to="/dashboard/userdashboard"

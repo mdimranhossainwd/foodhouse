@@ -4,6 +4,7 @@ import Register from "../Components/Authentications/Register";
 import AdminProfile from "../Components/Dashboard/Admin/AdminProfile";
 import Alluser from "../Components/Dashboard/Admin/Alluser";
 import Error from "../Components/Error/Error";
+import AddItem from "../Components/form/AddItem";
 import ContactPage from "../pages/ContactPage";
 import Dashboard from "../pages/Dashboard/Dashboard";
 import MyCartPage from "../pages/Dashboard/MyCartPage";
@@ -76,6 +77,10 @@ export const router = createBrowserRouter([
       {
         path: "alluser",
         element: <Alluser />,
+      },
+      {
+        path: "additem",
+        element: <AddItem />,
       },
     ],
   },
