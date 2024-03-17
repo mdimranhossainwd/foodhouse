@@ -1,4 +1,5 @@
 import { useContext } from "react";
+import toast from "react-hot-toast";
 import { FaFacebook, FaGithub, FaGoogle } from "react-icons/fa";
 import { Link, NavLink, useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
@@ -22,22 +23,13 @@ const Register = () => {
       .then((result) => {
         const user = result.user;
         const userInfo = {
-          displayName: name,
-          email: user?.email,
+          name: name,
+          mail: user?.email,
         };
-        console.log(userInfo);
 
         axios.post("/user", userInfo).then((res) => {
           if (res.data.insertedId) {
-            console.log("user added to the database");
-
-            Swal.fire({
-              position: "top-center",
-              icon: "success",
-              title: "User created successfully.",
-              showConfirmButton: false,
-              timer: 1500,
-            });
+            toast.success("User Information Saved DB");
             navigate("/");
           }
         });

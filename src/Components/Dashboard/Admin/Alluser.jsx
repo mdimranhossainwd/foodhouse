@@ -2,7 +2,6 @@ import { useQuery } from "@tanstack/react-query";
 import { useContext } from "react";
 import { FaUsers } from "react-icons/fa";
 import { RiDeleteBin6Line } from "react-icons/ri";
-import { NavLink } from "react-router-dom";
 import { AuthContext } from "../../../Provider/AuthProvider";
 import SubHeading from "../../../Shared/Heading/SubHeading";
 import useAxios from "../../../hooks/useAxios";
@@ -23,6 +22,7 @@ const Alluser = () => {
     queryKey: ["userInfo"],
     queryFn: speceficUsers,
   });
+  console.log(usersInfo);
 
   return (
     <div>
@@ -30,12 +30,8 @@ const Alluser = () => {
       <div className="overflow-x-auto bg-white py-10 mr-8 px-8">
         <div className="flex justify-between mb-6">
           <h2 className="text-4xl font-pt font-semibold">
-            Total Orders : {usersInfo?.data?.length}
+            Total User's : {usersInfo?.data?.length}
           </h2>
-          <h2 className="text-4xl font-pt font-semibold"></h2>
-          <button className="text-white font-medium text-lg py-2 px-5 bg-[#F42643]">
-            <NavLink to=""> Pay</NavLink>
-          </button>
         </div>
         <table className="table w-full">
           {/* head */}
