@@ -1,17 +1,36 @@
 import { GiForkKnifeSpoon } from "react-icons/gi";
+import Swal from "sweetalert2";
 import SubHeading from "../../Shared/Heading/SubHeading";
+import useAxios from "../../hooks/useAxios";
+
 const AddItem = () => {
+  const axios = useAxios();
   const handleAddItem = (e) => {
     e.preventDefault();
     const form = e.target;
-    const name = form.name.value;
+    const str_Name = form.name.value;
+    const str_Thumb = form.img.value;
     const category = form.category.value;
-    const price = form.price.value;
-    const message = form.message.value;
+    const str_Prize = form.price.value;
+    const str_Introduction = form.message.value;
 
-    const postAllVlue = { name, category, price, message };
+    const postAllVlue = {
+      str_Name,
+      str_Prize,
+      category,
+      str_Thumb,
+      str_Introduction,
+    };
 
-    console.log(postAllVlue);
+    axios.post("/addrecipie", postAllVlue).then((res) => {
+      if (res.data.acknowledged) {
+        Swal.fire({
+          title: "Add This Item !!",
+          text: "Successfully your recipie added!",
+          icon: "success",
+        });
+      }
+    });
   };
 
   return (
@@ -19,20 +38,37 @@ const AddItem = () => {
       <SubHeading heading="Add An Item" subHeading="What's New" />
       <div className="bg-[#F3F3F3] px-10 py-14 my-16">
         <form onSubmit={handleAddItem} className="">
-          <div className="relative z-0 w-full mb-5 group">
-            <label
-              htmlFor="Phone"
-              className="block mb-2 text-lg font-medium  text-[#444]"
-            >
-              Recipe Name *
-            </label>
-            <input
-              type="name"
-              name="name"
-              className="bg-white border text-md rounded-lg  block w-full px-4 py-3 "
-              placeholder="Recipe Name"
-              required
-            />
+          <div className="grid md:grid-cols-2 md:gap-6">
+            <div className="relative z-0 w-full mb-5 group">
+              <label
+                htmlFor="Phone"
+                className="block mb-2 text-lg font-medium  text-[#444]"
+              >
+                Recipe Name *
+              </label>
+              <input
+                type="name"
+                name="name"
+                className="bg-white border text-md rounded-lg  block w-full px-4 py-3 "
+                placeholder="Recipe Name"
+                required
+              />
+            </div>
+            <div className="relative z-0 w-full mb-5 group">
+              <label
+                htmlFor="Phone"
+                className="block mb-2 text-lg font-medium  text-[#444]"
+              >
+                Recipe Image *
+              </label>
+              <input
+                type="name"
+                name="img"
+                className="bg-white border text-md rounded-lg  block w-full px-4 py-3 "
+                placeholder="Recipe Img Link Here"
+                required
+              />
+            </div>
           </div>
           <div className="grid md:grid-cols-2 md:gap-6">
             <div className="relative z-0 w-full mb-5 group">
