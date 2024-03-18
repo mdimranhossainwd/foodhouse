@@ -8,6 +8,7 @@ import { FaCartShopping } from "react-icons/fa6";
 import { FiShoppingCart } from "react-icons/fi";
 import { GiForkKnifeSpoon } from "react-icons/gi";
 import { IoMdMail, IoMdMenu } from "react-icons/io";
+import { IoMenuOutline } from "react-icons/io5";
 import { MdOutlineCreditCard, MdOutlinePreview } from "react-icons/md";
 import { TbBrandBooking } from "react-icons/tb";
 
@@ -45,6 +46,16 @@ const DashboardMenu = () => {
         }
       >
         <GiForkKnifeSpoon /> Add Item
+      </NavLink>
+      <NavLink
+        to="manageitem"
+        className={({ isActive }) =>
+          isActive
+            ? "flex items-center gap-4 text-lg text-black font-semibold"
+            : "flex items-center gap-4 text-lg font-semibold"
+        }
+      >
+        <IoMenuOutline /> Manage Items
       </NavLink>
       <NavLink
         to="/dashboard/userdashboard"
