@@ -6,6 +6,7 @@ import Alluser from "../Components/Dashboard/Admin/Alluser";
 import MangeItem from "../Components/Dashboard/MangeItem/MangeItem";
 import Error from "../Components/Error/Error";
 import AddItem from "../Components/form/AddItem";
+import UpdateItem from "../Components/form/UpdateItem";
 import ContactPage from "../pages/ContactPage";
 import Dashboard from "../pages/Dashboard/Dashboard";
 import MyCartPage from "../pages/Dashboard/MyCartPage";
@@ -86,6 +87,14 @@ export const router = createBrowserRouter([
       {
         path: "manageitem",
         element: <MangeItem />,
+      },
+      {
+        path: "/dashboard/updateitem/:id",
+        element: <UpdateItem />,
+        loader: ({ params }) =>
+          fetch(
+            `http://localhost:3000/resturant/api/v1/fooditems/${params.id}`
+          ),
       },
     ],
   },

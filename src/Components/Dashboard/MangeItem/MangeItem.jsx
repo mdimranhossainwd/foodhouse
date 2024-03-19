@@ -1,6 +1,7 @@
 import { useQuery } from "@tanstack/react-query";
 import { AiTwotoneEdit } from "react-icons/ai";
 import { RiDeleteBin6Line } from "react-icons/ri";
+import { NavLink } from "react-router-dom";
 import Swal from "sweetalert2";
 import SubHeading from "../../../Shared/Heading/SubHeading";
 import useAxios from "../../../hooks/useAxios";
@@ -90,9 +91,11 @@ const MangeItem = () => {
                   <td>{item.str_Name}</td>
                   <td>$ {item.str_Prize}</td>
                   <th>
-                    <button className="p-4 transition rounded-md text-lg hover:bg-[#1F2937] hover:text-white">
-                      <AiTwotoneEdit />
-                    </button>
+                    <NavLink to={`/dashboard/updateitem/${item._id}`}>
+                      <button className="p-4 transition rounded-md text-lg hover:bg-[#1F2937] hover:text-white">
+                        <AiTwotoneEdit />
+                      </button>
+                    </NavLink>
                   </th>
                   <th>
                     <button
