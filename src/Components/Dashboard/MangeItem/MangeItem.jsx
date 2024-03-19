@@ -1,6 +1,7 @@
 import { useQuery } from "@tanstack/react-query";
 import { AiTwotoneEdit } from "react-icons/ai";
 import { RiDeleteBin6Line } from "react-icons/ri";
+import Swal from "sweetalert2";
 import SubHeading from "../../../Shared/Heading/SubHeading";
 import useAxios from "../../../hooks/useAxios";
 
@@ -21,7 +22,30 @@ const MangeItem = () => {
     queryFn: getFoodItems,
   });
 
-  console.log(foodInfo);
+  const handleDelete = (id) => {
+    Swal.fire({
+      title: "Are you sure?",
+      text: "You won't be able to revert this!",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "#3085d6",
+      cancelButtonColor: "#d33",
+      confirmButtonText: "Yes, delete it!",
+    }).then((result) => {
+      if (result.isConfirmed) {
+        axios.delete(`/fooditems/${id}`).then((res) => {
+          if (res.data.deletedCount > 0) {
+            refetch();
+            Swal.fire({
+              title: "Deleted!",
+              text: "Your file has been deleted.",
+              icon: "success",
+            });
+          }
+        });
+      }
+    });
+  };
 
   return (
     <>
@@ -71,7 +95,10 @@ const MangeItem = () => {
                     </button>
                   </th>
                   <th>
-                    <button className="p-4 transition rounded-md text-lg hover:bg-[#1F2937] hover:text-white">
+                    <button
+                      onClick={() => handleDelete(item._id)}
+                      className="p-4 transition rounded-md text-lg hover:bg-[#1F2937] hover:text-white"
+                    >
                       <RiDeleteBin6Line />
                     </button>
                   </th>
