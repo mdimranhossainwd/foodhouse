@@ -48,7 +48,7 @@ const MyCartPage = () => {
             Total Price : {parsePrice}
           </h2>
           <button className="text-white font-medium text-lg py-2 px-5 bg-[#F42643]">
-            <NavLink to=""> Pay</NavLink>
+            <NavLink to="/dashboard/payment"> Pay</NavLink>
           </button>
         </div>
         <table className="table w-full">
