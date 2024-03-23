@@ -1,62 +1,21 @@
-import {
-  FaCalendarAlt,
-  FaHome,
-  FaRegCreditCard,
-  FaUsers,
-} from "react-icons/fa";
+import { FaCalendarAlt, FaHome, FaRegCreditCard } from "react-icons/fa";
 import { FaCartShopping } from "react-icons/fa6";
 import { FiShoppingCart } from "react-icons/fi";
-import { GiForkKnifeSpoon } from "react-icons/gi";
 import { IoMdMail, IoMdMenu } from "react-icons/io";
-import { IoMenuOutline } from "react-icons/io5";
 import { MdOutlineCreditCard, MdOutlinePreview } from "react-icons/md";
 import { TbBrandBooking } from "react-icons/tb";
 
 import { Link, NavLink } from "react-router-dom";
+import useRole from "../../hooks/useRole";
+import AdminMenu from "./AdminMenu";
 
 const DashboardMenu = () => {
+  const [role] = useRole();
+  console.log(role);
+
   const DashboardMenu = (
     <div className=" gap-5 grid grid-cols-1 ">
-      <NavLink
-        to="adminhome"
-        className={({ isActive }) =>
-          isActive
-            ? "flex items-center gap-4 text-lg text-black font-semibold"
-            : "flex items-center gap-4 text-lg font-semibold"
-        }
-      >
-        <FaCalendarAlt /> Admin Home
-      </NavLink>
-      <NavLink
-        to="alluser"
-        className={({ isActive }) =>
-          isActive
-            ? "flex items-center gap-4 text-lg text-black font-semibold"
-            : "flex items-center gap-4 text-lg font-semibold"
-        }
-      >
-        <FaUsers /> All User
-      </NavLink>
-      <NavLink
-        to="additem"
-        className={({ isActive }) =>
-          isActive
-            ? "flex items-center gap-4 text-lg text-black font-semibold"
-            : "flex items-center gap-4 text-lg font-semibold"
-        }
-      >
-        <GiForkKnifeSpoon /> Add Item
-      </NavLink>
-      <NavLink
-        to="manageitem"
-        className={({ isActive }) =>
-          isActive
-            ? "flex items-center gap-4 text-lg text-black font-semibold"
-            : "flex items-center gap-4 text-lg font-semibold"
-        }
-      >
-        <IoMenuOutline /> Manage Items
-      </NavLink>
+      {role === "admin" && <AdminMenu />}
       <NavLink
         to="/dashboard/userdashboard"
         className={({ isActive }) =>

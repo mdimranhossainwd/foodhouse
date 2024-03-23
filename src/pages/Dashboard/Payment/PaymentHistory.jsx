@@ -44,10 +44,10 @@ const PaymentHistory = () => {
             {payment?.data?.map((item, index) => (
               <tr key={item._id}>
                 <th>{index + 1}</th>
-                <td className="text-md font-semibold">{item.user}</td>
-                <td className=" font-lobster text-lg">Food</td>
-                <td className=" font-lobster text-lg">{item.str_Prize}</td>
-                <td className=" font-lobster text-lg">{item.date}</td>
+                <td className="text-lg ">{item.user}</td>
+                <td className="  text-md">Order Food</td>
+                <td className="  text-md">{item.str_Prize}</td>
+                <td className="  text-md">{item.date}</td>
               </tr>
             ))}
           </tbody>
