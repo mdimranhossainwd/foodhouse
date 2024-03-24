@@ -3,7 +3,7 @@ import { useContext } from "react";
 import { AuthContext } from "../Provider/AuthProvider";
 
 export const instance = axios.create({
-  baseURL: "http://localhost:3000/resturant/api/v1",
+  baseURL: "http://localhost:5000/resturant/api/v1",
   withCredentials: true,
 });
 const useAxios = () => {
