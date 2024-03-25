@@ -98,7 +98,7 @@ export const router = createBrowserRouter([
         element: <UpdateItem />,
         loader: ({ params }) =>
           fetch(
-            `http://localhost:3000/resturant/api/v1/fooditems/${params.id}`
+            `https://food-side.onrender.com/resturant/api/v1/fooditems/${params.id}`
           ),
       },
     ],
