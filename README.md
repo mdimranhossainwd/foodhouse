@@ -29,3 +29,26 @@ The objective of Recipe-Realm is to:
 - **Favorites**: Save your favorite recipes for easy access later.
 
 ---
+
+
+
+## 🛠️ Technologies Used
+
+### Frontend
+
+- **React.js**: For building dynamic and responsive user interfaces.
+- **Vite**: A fast build tool and development server.
+- **Tailwind CSS**: Utility-first CSS framework for rapid UI development.
+
+### Backend
+
+- **Node.js**: JavaScript runtime for building the server-side application.
+- **Express.js**: Web framework for Node.js to handle routing and middleware.
+- **MongoDB**: NoSQL database for storing recipe data and user information.
+- **Mongoose**: ODM for MongoDB, facilitating schema modeling.
+
+### Deployment
+
+- **Firebase Hosting**: For deploying and hosting the web application.
+
+
