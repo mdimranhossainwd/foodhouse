@@ -18,3 +18,14 @@ The objective of Recipe-Realm is to:
 - Enhance user engagement through a responsive and user-friendly interface.
 
 ---
+
+
+## ✨ Features
+
+- **Recipe Discovery**: Browse a wide range of recipes from different cuisines.
+- **Search Functionality**: Quickly find recipes using keywords or ingredients.
+- **User Contributions**: Submit and share your own recipes with the community.
+- **Responsive Design**: Optimized for various devices, ensuring a seamless experience.
+- **Favorites**: Save your favorite recipes for easy access later.
+
+---
